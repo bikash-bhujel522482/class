@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int a[50],size,i;
+int a[50],size,i,data,pos,del,item;
 void menu()
 {
     int op;
@@ -19,7 +19,7 @@ void menu()
             ins();
             break;
         case 3:
-            
+            delete();
             break;
         case 4:
             dis();
@@ -34,14 +34,56 @@ void arr()
 {
     printf("Enter the size of array:");
     scanf("%d",&size);
+    if(size>=50)
+    {
+        printf("Please enter less than 50.\n");
+    }
+    else 
+    {
+        printf("Enter the elements of the array:\n");
+        for (i = 0; i < size; i++) 
+        {
+                scanf("%d", &a[i]);
+        }
+    }
 }
 void ins()
 {
-    printf("Enter element in array:\n");
+    /*printf("Enter element in array:\n");
     for(i=0;i<size;i++)
     {
         scanf("%d",&a[i]);
+    }*/
+   printf("Enter data you want to insert:\n");  //For inserting in required position
+   scanf("%d",&data);
+   
+   printf("Enter the position(1-%d):",size+1);
+   scanf("%d",&pos);
+   if(pos<=0 || pos>size+1)
+   {
+    printf("invalid position.\n");
+   }
+   for(i=size-1;i>=pos-1;i--)           //size of a is decreasing
+   {
+        a[i+1]=a[i];
+   }
+   a[pos-1]=data;
+   size++;
+}
+void delete()
+{
+    printf("\nEnter the data position to delete:");
+    scanf("%d",&del);
+    if(pos<=0 || pos>size)
+    {
+        printf("invalid position");
     }
+    item=a[pos-1];
+    for(i=del-1;i<size-1;i++)
+    {
+        a[i]=a[del-1];
+    }
+    size--;
 }
 void dis()
 {
