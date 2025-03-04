@@ -1,0 +1,11 @@
+Library ieee
+use ieee.std_logic_1164.all;
+
+entity and1 is
+	port(a,b:in bit;
+		c:out bit);
+	end entity and1;
+architecture arc_andgate of and1 is
+begin
+	c<=a and b;
+	end arc_andgate;
