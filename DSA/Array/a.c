@@ -7,7 +7,7 @@ void menu()
     while(1)
     {
         printf("MENU:");
-        printf("\n1.Create Array\n2.Insertion\n3.Deletion\n4.Display\n5.Exit");
+        printf("\n1.Create Array\n2.Insertion\n3.Deletion\n4.Display\n5.Sorting\n6.Exit");
         printf("\nEnter your option:");
         scanf("%d",&op);
         switch(op)
@@ -25,6 +25,9 @@ void menu()
             dis();
             break;
         case 5:
+            sort();
+            break;
+        case 6:
             printf("exiting the program . . .");
             exit(0);
         }
@@ -92,6 +95,24 @@ void dis()
     {
         printf("%d\n",a[i]);
     }    
+}
+void sort()
+{
+    int temp,j;
+    for(i=0;i<size-1;i++)
+    {
+        for(j=i+1;j<size;j++){
+            if(a[i]>a[j])
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+    
+        }
+        
+        
+    }
 }
 int main()
 {
