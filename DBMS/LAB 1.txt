@@ -1,0 +1,36 @@
+LAB 1
+Objective:-To install and configure MYSQL and to create DB user and assigning privileges.
+
+1.To display current user
+	select user();
+
+2.To display databases
+	show databases;
+
+3.To create a new database
+	CREATE DATABASE DB_BIKASH;
+
+4.To display user privileges
+	show grants for 'root'@'localhost';
+	show grants for 'username'@'localhost';
+
+5.To display current db users
+	SELECT USER FROM MYSQL.USER;
+
+6.To create a new db user
+	CREATE USER 'USERNAME'@'localhost'
+	IDENTIFIED BY "PASSWORD";
+
+7.To set grants for db user
+	GRANT ALL PRIVILEGES ON db_bikash.* To 'username'@'localhost';
+
+for login from cmd
+	MYSQL -u username -p
+
+8. To establish connection with database;
+	USE database_name;
+
+9.To list DB tables
+	SHOW TABLES;
+To create table 
+	CREATE TABLE Test_01(id int);

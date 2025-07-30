@@ -1,0 +1,43 @@
+1. To display Name and Salary of employees in ascending order of salary.
+	SELECT Name, Salary 
+	FROM EMPLOYEE 
+	ORDER BY Salary ASC;
+
+2. To display minimum age, sum of salary, and total number of employees.
+	SELECT MIN(Age), SUM(Salary), COUNT(*) 
+	FROM EMPLOYEE;
+
+3. To display department name and number of employees in each department.
+	SELECT Dept_Name, COUNT(*) 
+	FROM EMPLOYEE 
+	GROUP BY Dept_Name;
+
+4. To display average salary of IT department as "Avg. Salary of IT".
+	SELECT AVG(Salary) AS Avg_Salary_of_IT
+	FROM EMPLOYEE 
+	WHERE Dept_Name = 'IT';
+
+5. To display name of employee who has maximum salary.
+	SELECT Name 
+	FROM EMPLOYEE 
+	WHERE Salary = (SELECT MAX(Salary) FROM EMPLOYEE);
+
+6. To display department name which has average salary greater than minimum salary of    RESEARCH department.
+	SELECT Dept_Name 
+	FROM EMPLOYEE 
+	GROUP BY Dept_Name HAVING AVG(Salary) > (
+	SELECT MIN(Salary) 
+	FROM EMPLOYEE WHERE Dept_Name = 'RESEARCH');
+
+7. To display Name and Salary of employees who have salary greater than Sita's salary.
+	SELECT Name, Salary 
+	FROM EMPLOYEE WHERE Salary > (
+	SELECT Salary 
+	FROM EMPLOYEE 
+	WHERE Name = 'Sita');
+
+8. To display employee name who have age greater than average age.
+	SELECT Name 
+	FROM EMPLOYEE 
+	WHERE Age > (SELECT AVG(Age) 
+	FROM EMPLOYEE);

@@ -1,0 +1,30 @@
+1. lOGIN
+	MYSQL -u USER_01 -p
+2. To establish connection with database;
+	USE database_name;
+3. Creating tables
+    CREATE TABLE test01(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(20),
+    AGE INT CHECK(AGE>17 AND AGE<=60),
+    SALARY FLOAT CHECK(SALARY>5500),
+    DEPT_NAME VARCHAR(20) NOT NULL
+    )AUTO_INCREMENT=1001;
+4.Adding new attribute
+	ALTER TABLE EMPLOYEE
+	ADD ADDRESS VARCHAR(30);
+5. Describing table
+	DESC EMPLOYEE;
+6. Inserting detail in table
+	INSERT INTO table_name(ID,NAME,AGE,SALARY,DEPT_NAME)
+	VALUES("WORKER01",20,40000,"IT");
+7. Inserting detail of table
+	INSERT INTO table_name(ID,NAME,AGE,SALARY,DEPT_NAME)
+	VALUES("WORKER01",20,40000,"IT");
+8.Display table data
+	SELECT * FROM table_name;
+9.Deleting all data of the table
+	TRUNCATE TABLE Table_name;
+10.Resetting auto increment
+	ALTER TABLE Table_name
+	AUTO_INCREMENT=1001;

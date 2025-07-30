@@ -1,0 +1,9 @@
+OBJECTIVE:- To implement SQL-DML commands(INSERT,UPDATE,DELETE & SELECT).
+
+Employee(Name,Id,Age,Salary,Dept_Name,Address)
+	making table that has Name,Id,Age,Salary,Dept_Name,Address
+	and filling data
+
+
+Write SQL queries to:
+1.Display name and salary of employee in descending order to salary.
